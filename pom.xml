@@ -4,11 +4,37 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <!-- Apache Maven - фреймворк кроторый предназначен для
+                        автоматизции сборки проекта
+
+        Основных технологий для сборки 3 шт.:
+        1. Ant/Ant+
+        2. Maven (XML)
+        3. Gradle (Groovy)
+
+        Происходит автоматизация сборки проекта, вне зависимости от ОС
+
+        Вся конфигурация для Maven построеня на файлах pom.xml -->
+
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- groupId - общий идентефикатор для всего проекта
+         artifactId - уникальный идентефекатор для каждого
+                      отдельного модуля-->
     <artifactId>Pro007</artifactId>
     <groupId>Pro007</groupId>
+    <!-- Версионность проекта:
+         1-я цифра - мажорная версия
+                     (гловбальные изменения в проекте)
+         2-я цифра - среднестатистические обновленя
+                     (добаление нового функциона плюс совершенствование
+                      существующего)
+         3-я цифра - минорные обновления
+                     (исправления ошибок и не значительные изменения)
 
+         SNAPSHOT - сборки проекта на этапе разработки (dev)
+         RELEASE  - сборка всех изменений и формирвка версии
+         -->
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -19,11 +45,13 @@
 
     <build>
         <plugins>
+            <!-- Plugin который контролирует версию Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
+                    <!-- Версия Java для сборки-->
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
