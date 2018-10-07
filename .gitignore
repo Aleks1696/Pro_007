@@ -1,0 +1,7 @@
+/nbproject/
+*/target
+.idea/
+build.xml
+manifest.mf
+*.iml
+*.jar
