@@ -5,34 +5,73 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ServerSecond {
+    static List<SocketChannel> socketChannelList = new ArrayList<>();
+    static ExecutorService es = Executors.newCachedThreadPool();
+    static ByteBuffer buffer = ByteBuffer.allocate(128);
 
-    static ExecutorService es = Executors.newFixedThreadPool(2);
-     static ByteBuffer buffer = ByteBuffer.allocate(128);
 
     public static void main(String[] args) {
+
+
+try {
+    ServerSocketChannel server = ServerSocketChannel.open();
+    server.bind(new InetSocketAddress(50006));
+    Runnable runnable1 = () -> {
+        do {
+            writeAndRead();
+        }while (server.isOpen());
+    };
+
+    do {
+        SocketChannel client = server.accept();
+        es.execute(new MonoTreadClient(client));
+        es.execute(runnable1);
+
+    } while (true);
+}catch (IOException e ){}
+
+    }
+
+
+    public static void writeAndRead (){
+
         try {
 
+            for (SocketChannel socketChannel:socketChannelList){
+            int bytes;
+            if ((bytes = socketChannel.read(ServerSecond.buffer)) > 0) {
 
-            ServerSocketChannel server = ServerSocketChannel.open();
-            server.bind(new InetSocketAddress(50005));
+                ServerSecond.buffer.flip();
+
+                System.out.println("Входящее сообщение: "
+                        + new String(ServerSecond.buffer.array(), 0, bytes));
+                for (SocketChannel s : ServerSecond.socketChannelList) {
+                    s.write(ServerSecond.buffer);
+                }
 
 
-            while (server.isOpen()) {
-                SocketChannel client = server.accept();
-                es.execute(new MonoTreadClient(client));
-
-
-
+                ServerSecond.buffer.clear();
+                bytes = 0;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            }
+        } catch (IOException e){}
+
+
+
+
     }
-}
+    }
+
+
+
+
+
 
 class MonoTreadClient implements Runnable {
 
@@ -47,36 +86,9 @@ class MonoTreadClient implements Runnable {
     public void run() {
 
 
-        try {
-
-//                do {
-//
-//                    System.out.println("Входящее сообщение " + new String(buffer.array()));
-//                    clientDialog.read(buffer);
-//                    buffer.flip();
-//                    clientDialog.write(buffer);
-//
-//
-//                    buffer.clear();
-//
-//                }
-            int bytes;
-            while ((bytes = clientDialog.read(ServerSecond.buffer)) > 0) {
-
-                ServerSecond.buffer.flip();
-
-                System.out.println("Входящее сообщение: "
-                        + new String(ServerSecond.buffer.array(), 0, bytes));
-                clientDialog.write(ServerSecond.buffer);
-
-               ServerSecond.buffer.clear();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        while (true) ;
-
+        // try {
+        ServerSecond.socketChannelList.add(clientDialog);
+        System.out.println(ServerSecond.socketChannelList.toArray());
 
     }
 }
