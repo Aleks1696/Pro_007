@@ -46,7 +46,7 @@ public class Client {
 
     public static void connect() {
         try {
-            socketChannel = SocketChannel.open(new InetSocketAddress(50005));
+            socketChannel = SocketChannel.open(new InetSocketAddress(50006));
             if (socketChannel.isConnected()){
                 System.out.println("Соединение с сервером устаановлено.");
             }
@@ -100,6 +100,7 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
 
     }
