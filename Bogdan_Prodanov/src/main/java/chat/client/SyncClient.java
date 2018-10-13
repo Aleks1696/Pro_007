@@ -22,7 +22,7 @@ public class SyncClient extends Thread {
     public void run(){
             while(true){
                 try {
-//                    DataInputStream dis = new DataInputStream(client.socket().getInputStream());
+
                     ByteBuffer buffer = ByteBuffer.allocate(128);
                     int bytes;
                     while((bytes = client.read(buffer)) > 0){
