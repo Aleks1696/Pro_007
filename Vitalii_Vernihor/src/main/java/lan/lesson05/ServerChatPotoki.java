@@ -15,7 +15,7 @@ public class ServerChatPotoki {
         Scanner scan = new Scanner(System.in);
 
         ServerSocketChannel channel = ServerSocketChannel.open();
-        channel.bind(new InetSocketAddress(20000));
+        channel.bind(new InetSocketAddress(50009));
         System.out.println("Сервер запущен, ожидается подключения клиента...");
         SocketChannel socket = channel.accept();
         System.out.println("Соединение установленно...");
