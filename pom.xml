@@ -41,7 +41,6 @@
 
     <modules>
         <module>Pro007_Examples</module>
-        <module>Evgen_Boldyr</module>
         <module>Aleks_Borodavka</module>
         <module>Anton_Plat</module>
         <module>Bogdan_Prodanov</module>
@@ -67,5 +66,14 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <!-- Драйвер для подключения к DB MySQL-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+    </dependencies>
 
 </project>
