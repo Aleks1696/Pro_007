@@ -36,6 +36,7 @@ public class InsertPatientToRegistration {
                     e.printStackTrace();
                 }
             });
+            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
