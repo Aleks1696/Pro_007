@@ -10,8 +10,9 @@
     <parent>
         <groupId>Pro007</groupId>
         <artifactId>Pro007</artifactId>
-        <version>1.0.0-SNAPSHOOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
-<artifactId>Anton_Plat</artifactId>
+
+    <artifactId>Anton_Plat</artifactId>
 
 </project>
