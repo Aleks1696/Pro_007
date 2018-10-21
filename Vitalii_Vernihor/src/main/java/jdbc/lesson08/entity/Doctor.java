@@ -10,6 +10,8 @@ public class Doctor {
         this.age = age;
     }
 
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Doctor{");
@@ -19,6 +21,9 @@ public class Doctor {
         sb.append(", age=").append(age);
         sb.append('}');
         return sb.toString();
+    }
+
+    public Doctor() {
     }
 
     private Integer id;

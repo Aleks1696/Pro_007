@@ -1,11 +1,10 @@
 package jdbc.lesson08.dao;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import jdbc.lesson08.entity.Doctor;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -36,7 +35,25 @@ public class DoctorDAOImp implements DoctorDAO {
 
     @Override
     public Doctor read(Integer id) {
-        return null;
+        try (Connection conn = DriverManager.getConnection(url, user, pass)) {
+            PreparedStatement statement = conn.prepareStatement("SELECT  * FROM DOCTORS WHERE ID = ?");
+            statement.setInt(1, id);
+            ResultSet set = statement.executeQuery();
+            Doctor doctor = new Doctor();
+
+            while (set.next()) {
+                doctor.setId(set.getInt("ID"));
+                doctor.setName(set.getString("NAME"));
+                doctor.setSurname(set.getString("SURNAME"));
+                doctor.setAge(set.getInt("AGE"));
+            }
+            statement.close();
+            return doctor;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -51,6 +68,26 @@ public class DoctorDAOImp implements DoctorDAO {
 
     @Override
     public List<Doctor> findAll() {
-        return null;
+        try (Connection conn = DriverManager.getConnection(url,user,pass)){
+            PreparedStatement statement = conn.prepareStatement(
+                    "SELECT  * FROM DOCTORS"
+            );
+            ResultSet set = statement.executeQuery();
+            List<Doctor> doctors = new ArrayList<>();
+            while (set.next()){
+                doctors.add(new Doctor(
+                        set.getInt("ID"),
+                        set.getString("NAME"),
+                        set.getString("SURNAME"),
+                        set.getInt("AGE")
+                    )
+                );
+            }
+            statement.close();
+            return doctors;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
