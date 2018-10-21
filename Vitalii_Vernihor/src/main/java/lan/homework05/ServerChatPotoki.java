@@ -1,4 +1,4 @@
-package lan.lesson05;
+package lan.homework05;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
