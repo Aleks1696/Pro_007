@@ -1,18 +1,17 @@
-package lesson8.entity;
+package lesson7;
 
-public class Doctor {
-    private Integer id;
+public class Patient {
+    private Integer id ;
     private String name;
     private String surname;
     private Integer age;
 
-    public Doctor(Integer id, String name, String surname, Integer age) {
+    public Patient(Integer id, String name, String surname, Integer age) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
-    public Doctor () {}
 
     public Integer getId() {
         return id;
@@ -41,7 +40,7 @@ public class Doctor {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Doctor{");
+        final StringBuilder sb = new StringBuilder("Patient{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", surname='").append(surname).append('\'');
