@@ -45,7 +45,7 @@
         <module>Anton_Plat</module>
         <module>Bogdan_Prodanov</module>
         <module>Ihor_Havryk</module>
-        <module>Vitalii_Vernihor</module>
+        <!--<module>Vitalii_Vernihor</module>-->
         <module>Yaroslav_Halindzovskiy</module>
         <module>Yuriy_Balkovoy</module>
         <module>Maksim_Sevriukov</module>
@@ -74,6 +74,18 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
+        </dependency>
+
+        <!-- Hibernate Core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.17.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.2.17.Final</version>
         </dependency>
     </dependencies>
 
