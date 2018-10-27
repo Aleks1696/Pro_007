@@ -62,6 +62,20 @@ public class ReshatelQEIZasovivatelVBD {
             }
             quadEList.forEach(quadE -> {
                 try {
+
+                    if (Double.isNaN(quadE.getX1())){
+                        quadE.setX1(0.0);
+                    }
+                    if (Double.isNaN(quadE.getX2())){
+                        quadE.setX2(0.0);
+                    }
+                    if (Double.isInfinite(quadE.getX1())){
+                        quadE.setX1(0.0);
+                    }
+                    if (Double.isInfinite(quadE.getX2())){
+                        quadE.setX2(0.0);
+                    }
+
                     statement.setInt(1,quadE.getId());
                     statement.setDouble(2,quadE.getA());
                     statement.setDouble(3,quadE.getB());
