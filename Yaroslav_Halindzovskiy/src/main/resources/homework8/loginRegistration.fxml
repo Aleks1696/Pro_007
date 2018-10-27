@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="320.0" prefWidth="259.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homework8.contactBook.controller.RegistrationController">
+   <children>
+      <TextField fx:id="fldLoginReg" layoutX="37.0" layoutY="33.0" />
+      <PasswordField fx:id="fldPassReg" layoutX="37.0" layoutY="94.0" />
+      <PasswordField fx:id="fldPassConfReg" layoutX="37.0" layoutY="154.0" />
+      <Label layoutX="37.0" layoutY="14.0" text="Логин" />
+      <Label layoutX="37.0" layoutY="73.0" text="Пароль" />
+      <Label layoutX="32.0" layoutY="133.0" text="Подтвердите пароль" />
+      <Button layoutX="37.0" layoutY="196.0" mnemonicParsing="false" onAction="#registration" prefHeight="31.0" prefWidth="187.0" text="Зарегистрировать" />
+      <Button layoutX="37.0" layoutY="249.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Отмена" />
+   </children>
+</AnchorPane>

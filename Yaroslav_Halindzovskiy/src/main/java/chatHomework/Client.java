@@ -13,17 +13,20 @@ import java.util.concurrent.Executors;
 
 public class Client {
     private static SocketChannel socketChannel;
-   private static ByteBuffer buffer = ByteBuffer.allocate(128);
+    private static ByteBuffer buffer = ByteBuffer.allocate(128);
+    private static Scanner sc = new Scanner(System.in);
 
 
     public static void main(String[] args) {
-        Scanner sc =new Scanner(System.in);
+
         connect();
         Runnable runnableWrite = (() -> {
-            while (true){
-            writter(sc,socketChannel);}
+            while (true) {
+                writter(sc, socketChannel);
+            }
 
-        });Runnable runnableRead = (() -> {
+        });
+        Runnable runnableRead = (() -> {
             while (true) {
                 reader(socketChannel);
             }
@@ -46,8 +49,8 @@ public class Client {
 
     public static void connect() {
         try {
-            socketChannel = SocketChannel.open(new InetSocketAddress(50006));
-            if (socketChannel.isConnected()){
+            socketChannel = SocketChannel.open(new InetSocketAddress(50009));
+            if (socketChannel.isConnected()) {
                 System.out.println("Соединение с сервером устаановлено.");
             }
         } catch (IOException e) {
@@ -55,43 +58,36 @@ public class Client {
         }
 
 
-
     }
-    public static void reader (SocketChannel channel){
-        while (true){
-        int bytes;
+
+    public static void reader(SocketChannel channel) {
+        while (true) {
+            int bytes;
 
 
-        try{
-            while ((bytes = channel.read(buffer))>0){
+            try {
+                while ((bytes = channel.read(buffer)) > 0) {
 
-                buffer.flip();
-                System.out.println("Входящее сообщение " + new String(buffer.array()));
-            buffer.clear();
+                    buffer.flip();
+                    System.out.println("Входящее сообщение " + new String(buffer.array(), 0, bytes));
+                    buffer.clear();
+                }
+
+
+            } catch (IOException e) {
+
+            } catch (BufferOverflowException r) {
             }
-
-        }catch (IOException e ){
-
-        }
-        catch (BufferOverflowException r) {
-        }
         }
 
     }
-    public static void writter (Scanner sc ,SocketChannel channel) {
+
+    public static void writter(Scanner sc, SocketChannel channel) {
 
         System.out.println("Сообщение для отправки");
         String text = sc.nextLine();
-        if (text.equals("exit")){
-            try {
-                channel.shutdownInput();
-                channel.shutdownOutput();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+        if (text.equals("exit")) {
         }
-
         buffer.put(text.getBytes());
         buffer.flip();
         try {
@@ -100,7 +96,6 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
 
     }
