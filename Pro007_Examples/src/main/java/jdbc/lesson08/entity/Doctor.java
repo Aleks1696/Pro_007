@@ -7,6 +7,9 @@ public class Doctor {
     private String surname;
     private Integer age;
 
+    public Doctor() {
+    }
+
     public Doctor(Integer id, String name, String surname, Integer age) {
         this.id = id;
         this.name = name;
