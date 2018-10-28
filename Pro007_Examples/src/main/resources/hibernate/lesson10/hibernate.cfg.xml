@@ -14,8 +14,9 @@
             jdbc:mysql://localhost:3306/hibernate?useSSL=false
         </property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
 
         <mapping class="hibernate.lesson10.entity.Order"/>
     </session-factory>
