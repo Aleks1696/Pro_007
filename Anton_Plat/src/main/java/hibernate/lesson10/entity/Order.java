@@ -1,114 +1,99 @@
 package hibernate.lesson10.entity;
 
-/* @Entity - отмечает класс как обьект для доступа
- *            будет возможность взаимодействовать с БД и ее записями
- *  @Table -  аннотация которая позволяет нам задать
- *            имя таблицы*/
-
 import hibernate.lesson10.entity.types.ProductQuality;
 
 import javax.persistence.*;
 import java.util.Date;
 
+/* @Entity - отмечает класс как объект с помощью которого
+ *            будет возможность взаимодействовать с БД и ее
+ *            записями
+ *  @Table  - аннотация которая позволяет нам задать
+ *  имя таблицы */
+
 @Entity
 @Table(name = "ORDERS")
 public class Order {
 
-    /*для любой сущности Hibernate обязательно наличие,
-     * уникально идентификатора ID
+    /* Для любой сущности Hibernate обязательно наличие,
+     *  уникального иденетефикатора ID
      *
-     * @Column - позволяет задать имя столбца*/
+     *  @Id     - отмечает поле как идентефикатор для Hibernate
+     *  @Column - позволяет задать имя столбца
+     *  @GeneratedValue - позволяет задать стратегию заполнения
+     *                    поля (генерируется значение)*/
 
     @Id
-    @Column(name = "ORDER ID", nullable = false)
+    @Column(name = "ORDER_ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="PRODUCT")
+    @Column(name = "PRODUCT")
     private String product;
-    /*
-     * @Enumerated - позволяет нам задать тип в котором
-      * значение будет сохранено в БД.
-      * EnumType.ORDINAL - записывает индекс (рекомендуется к использованию)
-      * EnumType.STRING - записывает значение*/
-    @Column(name="PRODUCT QUALITY")
+
+    /* @Enumerated - позволяет нам задать тип в котором
+     *                значение будет сохранено в БД
+     *  EnumType.ORDINAL - записывает индекс (рекомендуется к исмользованию)
+     *  EnumType.STRING  - записывает значения */
+
+    @Column(name = "PRODUCT_QUALITY")
     @Enumerated(EnumType.STRING)
     private ProductQuality quality;
 
-    @Column(name="AMOUNT")
+    @Column(name = "AMOUNT")
     private Integer amount;
 
-    @Column(name="PRICE")
+    @Column(name = "PRICE")
     private Double price;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="DREATION DATA")
-    private Date creation;
+    @Column(name = "CREATION_DATE")
+    private Date creationDate;
 
-
-    public Order() {
-    }
-
-    public Order(String product, ProductQuality quality, Integer amount, Double price, Date creation) {
+    public Order() {}
+    public Order(String product, ProductQuality quality, Integer amount, Double price, Date creationDate) {
         this.product = product;
         this.quality = quality;
         this.amount = amount;
         this.price = price;
-        this.creation = creation;
+        this.creationDate = creationDate;
     }
 
     public Long getId() {
         return id;
     }
-
-    public Order setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
-        return this;
     }
-
     public String getProduct() {
         return product;
     }
-
-    public Order setProduct(String product) {
+    public void setProduct(String product) {
         this.product = product;
-        return this;
     }
-
     public ProductQuality getQuality() {
         return quality;
     }
-
-    public Order setQuality(ProductQuality quality) {
+    public void setQuality(ProductQuality quality) {
         this.quality = quality;
-        return this;
     }
-
     public Integer getAmount() {
         return amount;
     }
-
-    public Order setAmount(Integer amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
-        return this;
     }
-
     public Double getPrice() {
         return price;
     }
-
-    public Order setPrice(Double price) {
+    public void setPrice(Double price) {
         this.price = price;
-        return this;
     }
-
-    public Date getCreation() {
-        return creation;
+    public Date getCreationDate() {
+        return creationDate;
     }
-
-    public Order setCreation(Date creation) {
-        this.creation = creation;
-        return this;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     @Override
@@ -119,7 +104,7 @@ public class Order {
         sb.append(", quality=").append(quality);
         sb.append(", amount=").append(amount);
         sb.append(", price=").append(price);
-        sb.append(", creation=").append(creation);
+        sb.append(", creationDate=").append(creationDate);
         sb.append('}');
         return sb.toString();
     }
