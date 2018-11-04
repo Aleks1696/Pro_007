@@ -18,12 +18,7 @@ public class CreateTableDoctor {
                      DriverManager.getConnection(url, username, password)){
             Statement statement = conn.createStatement();
             statement.executeUpdate(
-                "create table doctors (" +
-                        "id integer not null, " +
-                        "name varchar (30)," +
-                        "surname varchar(30)," +
-                        "age integer," +
-                        "primary key (id))"
+                "create table doctors (id integer not null, name varchar (30),surname varchar(30),age integer,primary key (id))"
             );
             statement.close();
         } catch (SQLException e) {
