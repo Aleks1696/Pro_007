@@ -18,6 +18,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
 
-        <mapping class="hibernate.lesson10.entity.Order"/>
+        <mapping class="hibernate.lesson11.onetomany.entity.Group"/>
+        <mapping class="hibernate.lesson11.onetomany.entity.Course"/>
+        <mapping class="hibernate.lesson11.manytomany.entity.Student"/>
+
     </session-factory>
 </hibernate-configuration>
