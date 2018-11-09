@@ -29,7 +29,7 @@ public class MainApp extends Application {
         try {
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/contactbook/view/RootLayout.fxml"));
+            loader.setLocation(MainApp.class.getResource("/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
 
             // Отображаем сцену, содержащую корневой макет.
@@ -46,7 +46,7 @@ public class MainApp extends Application {
         try {
             // Загружаем сведения об адресатах.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/contactbook/view/PersonOverview.fxml"));
+            loader.setLocation(MainApp.class.getResource("/PersonOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
 
             // Помещаем сведения об адресатах в центр корневого макета.
