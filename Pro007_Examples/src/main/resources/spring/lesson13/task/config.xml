@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="spring.lesson13.task.xml.entity.Company">
+        <constructor-arg name="director" ref="director"/>
+        <constructor-arg name="manager" ref="manager"/>
+        <constructor-arg name="driver" ref="driver"/>
+    </bean>
+
+    <bean class="spring.lesson13.task.xml.entity.Director" id="director">
+        <constructor-arg name="name" value="Grigorij"/>
+        <constructor-arg name="surname" value="Viktorov"/>
+        <constructor-arg name="salary" value="5000.00"/>
+        <property name="driver" ref="driver"/>
+    </bean>
+
+    <bean class="spring.lesson13.task.xml.entity.Manager" id="manager">
+        <constructor-arg name="name" value="Alex"/>
+        <constructor-arg name="surname" value="Rublev"/>
+        <constructor-arg name="salary" value="2500.00"/>
+    </bean>
+
+    <bean class="spring.lesson13.task.xml.entity.Driver" id="driver">
+        <constructor-arg name="name" value="Viktor"/>
+        <constructor-arg name="surname" value="Petrov"/>
+        <constructor-arg name="salary" value="1500.00"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean class="spring.lesson13.task.xml.entity.Car" id="car">
+        <property name="model" value="Ford"/>
+        <property name="color" value="Black"/>
+        <property name="year" value="2010"/>
+    </bean>
+
+</beans>
