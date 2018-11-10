@@ -1,0 +1,21 @@
+Создать три класса:
+
+- Company
+    - Director
+        - Driver
+    - Manger
+    - Driver
+        - Car
+
+
+Employee
+Director, Manager, Driver:
+    - name
+    - surname
+    - salary
+
+Задача описать всю структуру и настроить Spring контейнер
+
+
+В тестовом классе создаете Bean Company, все остальные зависимости
+должны быть настроены автоматически.
