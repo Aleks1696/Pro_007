@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "_//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Настройки подключения к БД -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <property name="connection.url">
+   jdbc:mysql://localhost:3306/hibernate?useSSL=false
+        </property>
+    <!-- Режим работы фреймворка - create - позволяет нам создать БД,добаить в нее данные
+    Особенность: с каждым новым запуском программы,БД будет пересоздаваться
+    -create-drop - делает все тоже самое что и create, но по завершению работы
+    программы БД будет удалена
+    - update - Позволяет создать БД, в случае ее изменения структуры в классах
+    автоматически обновляет БД (используется для разработки)
+    -validate - позволяет верефицировать Java-классы Entity и табл. в БД,
+    если верификация прошла успешно приложение запустится.В остальных случаях
+    Hibernate, сообщит о не соответствии мужду классами и БД
+    -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <mapping resource="hibernate/lesson9/entity/Maniac.hbm.xml"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>
