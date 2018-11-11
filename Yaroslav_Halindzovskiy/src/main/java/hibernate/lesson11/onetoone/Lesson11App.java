@@ -1,8 +1,8 @@
-package hibernate.lesson11;
+package hibernate.lesson11.onetoone;
 
-import hibernate.lesson11.entity.Author;
-import hibernate.lesson11.entity.Book;
-import hibernate.lesson11.util.HibernateUtil;
+import hibernate.lesson11.onetoone.entity.Author;
+import hibernate.lesson11.onetoone.entity.Book;
+import hibernate.lesson11.onetoone.util.HibernateUtil;
 import org.hibernate.Session;
 
 import java.util.Calendar;
@@ -30,7 +30,9 @@ public class Lesson11App {
         session.getTransaction().commit();
 
         author1.setBook(book3);
+        book3.setAuthor(author1);
         author2.setBook(book1);
+        book1.setAuthor(author2);
 
         session.beginTransaction();
         session.update(book3);

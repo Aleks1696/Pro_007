@@ -13,8 +13,9 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping class="hibernate.lesson11.onetoone.entity.Author"/>
-        <mapping class="hibernate.lesson11.onetoone.entity.Book"/>
+        <mapping class="hibernate.lesson11.onetomane.Group"/>
+        <mapping class="hibernate.lesson11.onetomane.Course"/>
+        <mapping class="hibernate.lesson11.manytomany.Student"/>
 
     </session-factory>
 </hibernate-configuration>

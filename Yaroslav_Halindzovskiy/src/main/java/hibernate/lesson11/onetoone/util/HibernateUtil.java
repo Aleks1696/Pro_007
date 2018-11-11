@@ -1,4 +1,4 @@
-package hibernate.lesson11.util;
+package hibernate.lesson11.onetoone.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

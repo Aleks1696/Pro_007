@@ -6,13 +6,13 @@ import java.util.List;
 
 @Entity
 @Table(name = "courses")
-class Course {
+public class Course {
 
 
     @Id
 @Column(name = "course_id")
 @SequenceGenerator ( name = "courseId", sequenceName = "seq_course_id", initialValue = 2374000)
-@GeneratedValue (strategy = GenerationType.SEQUENCE,generator = "coursid")
+@GeneratedValue (strategy = GenerationType.SEQUENCE,generator = "courseId")
 private Long id;
 
     @Column
@@ -28,6 +28,9 @@ private String description;
     public Course(String title, String description) {
         this.title = title;
         this.description = description;
+    }
+
+    Course() {
     }
 
     public Long getId() {

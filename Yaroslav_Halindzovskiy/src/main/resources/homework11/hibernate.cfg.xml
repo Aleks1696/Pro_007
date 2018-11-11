@@ -2,19 +2,21 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate?useSSL=false</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/homework11?useSSL=false</property>
+
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
+        <mapping class="homework11.entity.Laptop"/>
+        <mapping class="homework11.entity.Store"/>
+        <mapping class="homework11.entity.types.Vendor"/>
+        <mapping class="homework11.entity.types.Memory"/>
+        <mapping class="homework11.entity.types.CPU"/>
 
-        <mapping class="hibernate.lesson11.onetoone.entity.Author"/>
-        <mapping class="hibernate.lesson11.onetoone.entity.Book"/>
 
     </session-factory>
 </hibernate-configuration>

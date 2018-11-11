@@ -1,4 +1,4 @@
-package hibernate.lesson11.entity;
+package hibernate.lesson11.onetoone.entity;
 
 import javax.persistence.*;
 import java.util.Date;
