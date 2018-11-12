@@ -34,6 +34,11 @@ private Integer qantity;
         this.laptops = laptops;
     }
 
+    public Store(Date date, Integer qantity) {
+        this.date = date;
+        this.qantity = qantity;
+    }
+
     public Store() {
     }
 
@@ -68,9 +73,8 @@ private Integer qantity;
         return laptops;
     }
 
-    public Store setLaptops(List<Laptop> laptops) {
+    public void setLaptops(List<Laptop> laptops) {
         this.laptops = laptops;
-        return this;
     }
 
     @Override

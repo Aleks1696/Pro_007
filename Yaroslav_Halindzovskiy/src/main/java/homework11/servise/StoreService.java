@@ -12,9 +12,9 @@ public interface StoreService {
     void update(Store store);
     void delete (Store store);
     List<Store> findAll () ;
-    Laptop sell();
-    Laptop findByNumberOfParty();
-    Laptop findLapptopByDate ();
+    void sell(Long id);
+     List findByNumberOfParty(Long id);
+    List findLapptopByDate (Date date);
 
   /*  Создание новой партии ноутбуков
    -  Продажа ноутбука со склада (желательно добавить
