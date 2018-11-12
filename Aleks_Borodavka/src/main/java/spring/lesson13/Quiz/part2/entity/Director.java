@@ -1,42 +1,42 @@
-package spring.homework13.part2.entity;
+package spring.lesson13.Quiz.part2.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public class Director implements Employee{
+public class Director {
 
     private String name;
     private String surname;
-    private Integer salary;
+    private Double salary;
 
     @Autowired
     @Qualifier("driver")
-    private Employee driver;
+    private Driver driver;
 
-    public Director(String name, String surname, Integer salary) {
+    public Director(String name, String surname, Double salary) {
         this.name = name;
         this.surname = surname;
         this.salary = salary;
     }
 
-    @Override
     public String getName() {
         return name;
     }
 
-
-    @Override
     public String getSurname() {
         return surname;
     }
 
-    @Override
-    public Integer getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public Employee getDriver() {
+    public Driver getDriver() {
         return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
     @Override
@@ -44,11 +44,9 @@ public class Director implements Employee{
         final StringBuilder sb = new StringBuilder("Director{");
         sb.append("name='").append(name).append('\'');
         sb.append(", surname='").append(surname).append('\'');
-        sb.append(", salary='").append(salary).append('\'');
+        sb.append(", salary=").append(salary);
         sb.append(", driver=").append(driver);
         sb.append('}');
         return sb.toString();
     }
-
-
 }

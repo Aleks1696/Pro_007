@@ -1,30 +1,43 @@
-package spring.homework13.part2.entity;
+package spring.lesson13.Quiz.part2.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Company {
+
     @Autowired
     @Qualifier("director")
-    private Employee director;
+    private Director director;
+
     @Autowired
     @Qualifier("manager")
-    private Employee manager;
+    private Manager manager;
+
     @Autowired
     @Qualifier("driver")
-    private Employee driver;
+    private Driver driver;
 
-    public Company() {}
+    public void setDirector(Director director) {
+        this.director = director;
+    }
 
-    public Employee getDirector() {
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Director getDirector() {
         return director;
     }
 
-    public Employee getManager() {
+    public Manager getManager() {
         return manager;
     }
 
-    public Employee getDriver() {
+    public Driver getDriver() {
         return driver;
     }
 

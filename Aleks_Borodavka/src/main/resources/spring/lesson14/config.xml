@@ -6,18 +6,13 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
+
     <import resource="data-source.xml"/>
 
-
-    <!--
-    @Repository - использует для обьектов доступа к данным
-    @Service - используется для обьектов сервиса
-    @Component - используется для обьектов утилит.
-
-
-    -->
+    <!-- Component Scan - сканирует проект на наличие Spring bean
+         @Repository - используется для объектов доступа к данным
+         @Service - для объектов сервисов
+         @Component - для объектов утилит-->
     <context:component-scan base-package="spring.lesson14"/>
-
-
 
 </beans>

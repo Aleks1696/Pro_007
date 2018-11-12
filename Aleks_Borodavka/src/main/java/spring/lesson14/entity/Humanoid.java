@@ -1,5 +1,6 @@
 package spring.lesson14.entity;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +17,14 @@ public class Humanoid {
     @Column
     private Double price;
 
-    public Humanoid() { }
+    /* POJO - простой java объект
+     *  - ныличие ключевого поля id (Long)
+      * - обязательное наличие контсруктора по умолчанию (описывать
+      * явно не оязательно если не использовать другие)
+      * - наличие гетеров и сеттеров*/
+
+    public Humanoid(){}
+
     public Humanoid(String model, Double price) {
         this.model = model;
         this.price = price;
