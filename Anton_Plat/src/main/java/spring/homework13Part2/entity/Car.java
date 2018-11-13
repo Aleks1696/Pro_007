@@ -17,6 +17,7 @@ public class Car {
         return color;
     }
 
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Car{");

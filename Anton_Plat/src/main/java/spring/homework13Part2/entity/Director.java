@@ -13,6 +13,8 @@ public class Director extends BasedEmployee {
         super(name, surname, salary);
     }
 
+
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Director{");

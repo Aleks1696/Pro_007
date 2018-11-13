@@ -8,7 +8,8 @@ import spring.homework13Part2.entity.*;
 
 @Configuration
 public class BeansConfig {
-    @Bean
+
+    @Bean(name = "Ukraine")
     public Company beanCompany(){
         return new Company();
     }
@@ -25,5 +26,10 @@ public class BeansConfig {
     @Bean(name = "driver")
     public Employee beanDriver(){
         return new Driver( "Petia","Poroshenko",1.0);
+    }
+
+    @Bean
+    public Car beanCar(){
+        return new Car("BMW","black");
     }
 }

@@ -10,7 +10,7 @@ public class Test {
         context.register(BeansConfig.class);
         context.refresh();
 
-        System.out.println(Company.class);
+        System.out.println(context.getBean(Company.class));
     }
 
 
