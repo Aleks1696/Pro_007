@@ -1,10 +1,5 @@
-package homework11.entity;
+package spring.homework14.entity;
 
-
-import hibernate.lesson11.manytomany.Student;
-import homework11.entity.types.CPU;
-import homework11.entity.types.Memory;
-import homework11.entity.types.Vendor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -39,7 +34,7 @@ public class Laptop {
 
     @OneToOne(fetch = FetchType.EAGER, targetEntity = Memory.class)
     @JoinColumn(name = "memory_id", referencedColumnName = "memory_id")
-  private   Memory memory;
+  private Memory memory;
 
     /*
     *

@@ -1,9 +1,10 @@
-package homework11.entity.types;
+package spring.homework14.entity;
 
 
 
-import homework11.entity.Laptop;
-import homework11.entity.types.enums.CPUenum;
+
+
+import spring.homework14.entity.enums.CPUenum;
 
 import javax.persistence.*;
 

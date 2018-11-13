@@ -1,18 +1,19 @@
-package homework11.servise;
+package spring.homework14.service;
 
-import homework11.entity.Laptop;
-import homework11.entity.types.CPU;
-import homework11.entity.types.Memory;
-import homework11.entity.types.Vendor;
+
+
+
+import org.springframework.stereotype.Service;
+import spring.homework14.entity.Laptop;
 
 import java.util.Date;
 import java.util.List;
-
+@Service
 public interface LaptopService {
-    Laptop create (Double price, Date date, CPU cpu, Memory memory, Vendor vendor);
-    Laptop read (Long id);
+    Long create(Laptop laptop);
+    Laptop read(Long id);
     void update(Laptop laptop);
-    void delete (Laptop laptop);
+    void delete(Laptop laptop);
     List<Laptop> findAll();
     List<Laptop> findByVendor(String vendor);
     List<Laptop> findByPrice(Double price);

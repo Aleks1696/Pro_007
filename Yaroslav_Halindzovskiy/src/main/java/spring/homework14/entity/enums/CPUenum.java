@@ -1,4 +1,4 @@
-package homework11.entity.types.enums;
+package spring.homework14.entity.enums;
 
 public enum CPUenum {
 

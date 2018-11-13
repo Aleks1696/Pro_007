@@ -1,7 +1,5 @@
-package homework11.entity.types;
+package spring.homework14.entity;
 
-
-import homework11.entity.Laptop;
 
 import javax.persistence.*;
 import java.util.ArrayList;

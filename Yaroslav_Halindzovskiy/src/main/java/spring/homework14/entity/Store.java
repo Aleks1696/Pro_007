@@ -1,4 +1,4 @@
-package homework11.entity;
+package spring.homework14.entity;
 
 
 import javax.persistence.*;

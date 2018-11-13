@@ -22,7 +22,8 @@ public class HumanoidDAOImp  implements HumanoidDAO{
     private SessionFactory factory;
 @Autowired
     public HumanoidDAOImp(SessionFactory factory) {
-        this.factory = factory;
+
+    this.factory = factory;
     }
 
 
@@ -31,26 +32,29 @@ public class HumanoidDAOImp  implements HumanoidDAO{
 
     @Override
     public Long create(Humanoid humanoid) {
-        return null;
+        return (Long) factory.getCurrentSession().save(humanoid);
     }
 
     @Override
     public Humanoid get(Long id) {
-        return null;
+        return factory.getCurrentSession().get(Humanoid.class,id);
     }
 
     @Override
     public void update(Humanoid humanoid) {
+    factory.getCurrentSession().update(humanoid);
 
     }
 
     @Override
     public void delete(Humanoid humanoid) {
+    factory.getCurrentSession().delete(humanoid);
 
     }
 
     @Override
     public List<Humanoid> findAll() {
-        return null;
+
+        return factory.getCurrentSession().createCriteria(Humanoid.class).list();
     }
 }
