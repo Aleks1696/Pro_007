@@ -16,7 +16,7 @@ public class Laptop {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "bookId")
     private Long id;
 
-    @Column(name = "serial_number_laptop", unique = true)
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long serialNumber;
 

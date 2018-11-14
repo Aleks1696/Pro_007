@@ -16,9 +16,9 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "storeId")
     private Long id;
 
-@Column(name = "date")
+@Column
     private Date date;
-@Column(name = "qantity")
+@Column
 private Integer qantity;
 
 @ManyToMany(fetch = FetchType.EAGER,targetEntity = Laptop.class)

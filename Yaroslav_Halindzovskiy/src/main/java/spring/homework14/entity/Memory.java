@@ -12,19 +12,19 @@ import javax.persistence.*;
 public class Memory {
 
     @Id
-    @Column(name = "memory_id", nullable = false)
-    @SequenceGenerator(name = "memoryId", sequenceName = "seq_memory_id")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "memoryId")
+    @Column(name = "memory_id")
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "serial_number_memory", unique = true)
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long serialNumberMenory;
 
-    @Column(name = "type")
+    @Column
     private MemoryTypes memoryTypes;
 
-    @Column(name = "frequency")
+    @Column
     private Double frequency;
 
     @OneToOne(fetch = FetchType.EAGER, mappedBy = "memory", targetEntity = Laptop.class)
