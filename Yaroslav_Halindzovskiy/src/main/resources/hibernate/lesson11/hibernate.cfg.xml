@@ -13,8 +13,8 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
 
-        <mapping class="hibernate.lesson11.entity.Author"/>
-        <mapping class="hibernate.lesson11.entity.Book"/>
+        <mapping class="hibernate.lesson11.onetoone.entity.Author"/>
+        <mapping class="hibernate.lesson11.onetoone.entity.Book"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="spring.lesson13.Quiz.part1.entity.Driver" id="driver">
+        <constructor-arg name="name" value="Petr"/>
+        <constructor-arg name="surname" value="Petrovich"/>
+        <constructor-arg name="salary" value="5600.00"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean class="spring.lesson13.Quiz.part1.entity.Car" id="car">
+        <constructor-arg name="model" value="Reno"/>
+        <constructor-arg name="price" value="45000"/>
+    </bean>
+
+    <bean class="spring.lesson13.Quiz.part1.entity.Director" id="director">
+        <constructor-arg name="name" value="Herr"/>
+        <constructor-arg name="surname" value="Director"/>
+        <constructor-arg name="salary" value="3600.00"/>
+        <property name="driver" ref="driver"/>
+    </bean>
+
+    <bean class="spring.lesson13.Quiz.part1.entity.Manager" id="manager">
+        <property name="name" value="Lorenco"/>
+        <property name="surname" value="De-Lacama"/>
+        <property name="salary" value="8000.00"/>
+    </bean>
+
+    <bean class="spring.lesson13.Quiz.part1.entity.Company" id="company">
+        <constructor-arg name="director" ref="director"/>
+        <constructor-arg name="manager" ref="manager"/>
+        <constructor-arg name="driver" ref="driver"/>
+    </bean>
+
+
+
+</beans>

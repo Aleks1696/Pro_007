@@ -16,7 +16,6 @@ public class Car {
         return this;
     }
 
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Car{");

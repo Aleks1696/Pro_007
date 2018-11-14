@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Bean - подготовленная реализация java объекта -->
+    <bean class="spring.lesson13.part1.entity.Human" id="Ivan">
+        <constructor-arg name="name" value="Ivan"/>
+        <constructor-arg name="age" value="25"/>
+        <constructor-arg name="hp" value="100"/>
+        <property name="weapon" ref="LegendaryMysticPane"/>
+    </bean>
+
+    <bean class="spring.lesson13.part1.entity.Weapon" id="Axe">
+        <property name="type" value="Axe"/>
+        <property name="damage" value="10"/>
+        <property name="weight" value="10"/>
+    </bean>
+
+    <bean class="spring.lesson13.part1.entity.Weapon" id="LegendaryMysticPane">
+        <property name="type" value="LegendatyMysticPane"/>
+        <property name="damage" value="6000"/>
+        <property name="weight" value="1"/>
+    </bean>
+
+
+</beans>

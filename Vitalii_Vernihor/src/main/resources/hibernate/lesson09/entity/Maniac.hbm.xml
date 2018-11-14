@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping
+        PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hibernate.lesson09.entity.Maniac" table="MANIACS">
+        <!-- наличие id обязательно -->
+        <id name="id" type="java.lang.Long">
+            <column name="ID"/>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME"/>
+        </property>
+        <property name="killScore" type="java.lang.Integer">
+            <column name="KILL_SCORE"/>
+        </property>
+        <property name="specialization" type="java.lang.String">
+            <column name="SPECIALIZATION"/>
+        </property>
+    </class>
+</hibernate-mapping>
