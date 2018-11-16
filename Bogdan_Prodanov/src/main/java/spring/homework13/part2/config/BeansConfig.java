@@ -1,5 +1,6 @@
 package spring.homework13.part2.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import spring.homework13.part2.entity.*;
@@ -14,7 +15,8 @@ public class BeansConfig {
     }
 
     @Bean
-    public Director beanVasya() {
+    @Qualifier("director")
+    public Employee beanVasya() {
         return new Director(
                 "Vasya",
                 "Pupkin",
@@ -23,7 +25,8 @@ public class BeansConfig {
     }
 
     @Bean
-    public Driver beanSergey(){
+    @Qualifier("driver")
+    public Employee beanSergey(){
         return new Driver(
                 "Sergey",
                 "Alehandro",
@@ -39,7 +42,8 @@ public class BeansConfig {
     }
 
     @Bean
-    public Manager beanManagerAndrey() {
+    @Qualifier("manager")
+    public Employee beanManagerAndrey() {
         return new Manager(
                 "Andrey",
                 "Volochenko",

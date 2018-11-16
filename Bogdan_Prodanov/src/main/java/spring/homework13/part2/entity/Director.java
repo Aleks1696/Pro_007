@@ -1,6 +1,7 @@
 package spring.homework13.part2.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Director implements Employee{
 
@@ -9,7 +10,8 @@ public class Director implements Employee{
     private Integer salary;
 
     @Autowired
-    private Driver driver;
+    @Qualifier("driver")
+    private Employee driver;
 
     public Director(String name, String surname, Integer salary) {
         this.name = name;
@@ -33,7 +35,7 @@ public class Director implements Employee{
         return salary;
     }
 
-    public Driver getDriver() {
+    public Employee getDriver() {
         return driver;
     }
 

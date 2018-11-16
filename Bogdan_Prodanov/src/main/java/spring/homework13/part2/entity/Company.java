@@ -1,26 +1,30 @@
 package spring.homework13.part2.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Company {
     @Autowired
-    private Director director;
+    @Qualifier("director")
+    private Employee director;
     @Autowired
-    private Manager manager;
+    @Qualifier("manager")
+    private Employee manager;
     @Autowired
-    private Driver driver;
+    @Qualifier("driver")
+    private Employee driver;
 
     public Company() {}
 
-    public Director getDirector() {
+    public Employee getDirector() {
         return director;
     }
 
-    public Manager getManager() {
+    public Employee getManager() {
         return manager;
     }
 
-    public Driver getDriver() {
+    public Employee getDriver() {
         return driver;
     }
 
