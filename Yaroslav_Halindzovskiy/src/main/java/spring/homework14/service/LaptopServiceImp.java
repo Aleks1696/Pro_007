@@ -11,10 +11,13 @@ import java.util.List;
 @Service
 public class LaptopServiceImp  implements LaptopService{
     private LaptopDAO laptopDAO;
-@Autowired
+    @Autowired
     public LaptopServiceImp(LaptopDAO laptopDAO) {
         this.laptopDAO = laptopDAO;
     }
+
+
+
 
     @Override
     public Long create(Laptop laptop) {

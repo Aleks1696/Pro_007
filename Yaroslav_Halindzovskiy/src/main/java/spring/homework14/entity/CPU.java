@@ -17,14 +17,14 @@ public class CPU {
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "cpuId")
     private Long id;
 
-    @Column(name = "serial_number_cpu",unique = true)
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long serialNumberCpu;
 
-    @Column (name = "brand_CPU")
+    @Column
     private CPUenum brandCPU;
 
-    @Column(name = "frequency")
+    @Column
     private Double frequence;
 
     @OneToOne(fetch = FetchType.EAGER,mappedBy = "cpu",targetEntity = Laptop.class)

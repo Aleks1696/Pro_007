@@ -2,7 +2,7 @@ package spring.homework14;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import spring.homework14.dao.LaptopDAO;
+import spring.homework14.dao.*;
 import spring.homework14.entity.*;
 import spring.homework14.entity.enums.CPUenum;
 import spring.homework14.entity.enums.MemoryTypes;
@@ -22,24 +22,45 @@ public class DataBaseTest {
         CPU cpu3 = new CPU(CPUenum.Intel, 2.0);
         CPU cpu4 = new CPU(CPUenum.Amd, 2.0);
 
+        CPUDAO cpudao = context.getBean(CPUDAO.class);
+        cpudao.create(cpu1);
+        cpudao.create(cpu2);
+        cpudao.create(cpu3);
+        cpudao.create(cpu4);
+
         Memory memory1 = new Memory(MemoryTypes.DDR2, 24.0);
         Memory memory2 = new Memory(MemoryTypes.DDR2, 24.0);
         Memory memory3 = new Memory(MemoryTypes.DDR3, 24.0);
         Memory memory4 = new Memory(MemoryTypes.DDR4, 24.0);
 
+        MemoryDAO memoryDAO = context.getBean(MemoryDAO.class);
+        memoryDAO.create(memory1);
+        memoryDAO.create(memory2);
+        memoryDAO.create(memory3);
+        memoryDAO.create(memory4);
+
         Vendor vendor1 = new Vendor("XXX", " Apple Incorporation");
         Vendor vendor2 = new Vendor("XXX", "lenovo IBM Company");
+
+        VendorDAO vendorDAO = context.getBean(VendorDAO.class);
+        vendorDAO.create(vendor1);
+        vendorDAO.create(vendor2);
 
         Laptop laptop1 = new Laptop(999.99, new Date(2015, 12, 11), cpu1, memory1, vendor1);
         Laptop laptop2 = new Laptop(1000.0, new Date(2017, 6, 23), cpu2, memory2, vendor1);
         Laptop laptop3 = new Laptop(123.0, new Date(2018, 2, 14), cpu3, memory3, vendor2);
         Laptop laptop4 = new Laptop(500.0, new Date(2012, 1, 10), cpu4, memory4, vendor2);
 
+//        CarTest carTest1 = new CarTest("Totyota");
+//        carTest1
+
         LaptopService  service = context.getBean(LaptopService.class);
+
         service.create(laptop1);
-        service.create(laptop2);
-        service.create(laptop3);
-        service.create(laptop4);
+      service.create(laptop2);
+     service.create(laptop3);
+      service.create(laptop4);
+
 
 
 
@@ -56,6 +77,8 @@ public class DataBaseTest {
         Store store2= new Store(laptop3.getDate(),100,laptops2);
         Store store3 = new Store(laptop4.getDate(),5);
 
+      //  StoreService storeService = context.getBean(StoreService.class);
+       // storeService.create(store1);
 
     }
 }
