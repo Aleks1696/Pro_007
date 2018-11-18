@@ -52,6 +52,7 @@ public class StudentServiceImpl implements StudentsService {
         student.setSurname(request.getSurname());
         student.setAge(request.getAge());
         student.setLastUpdate(Calendar.getInstance().getTime());
+        studentRepository.saveAndFlush(student);
     }
 
     public void delete(Long id) {
