@@ -1,7 +1,7 @@
 <c3p0-config>
-    <default>
+    <default-config>
         <property name="jdbcUrl">
-            jdbc:mysql://localhost:3306/serviceapi?useSSL=false
+            jdbc:mysql://localhost:3306/spring?useSSL=false
         </property>
         <property name="user">root</property>
         <property name="password">root</property>
@@ -10,5 +10,5 @@
         <property name="initialPoolSize">3</property>
         <property name="minPoolSize">1</property>
         <property name="maxPoolSize">5</property>
-    </default>
+    </default-config>
 </c3p0-config>
