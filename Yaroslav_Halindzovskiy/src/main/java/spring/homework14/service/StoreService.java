@@ -8,12 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface StoreService {
-    Store create(Store store);
-    Store createParty(Date date, Integer qantity, List<Laptop> laptops);
-    Store read(Long id);
-    void update(Store store);
-    void delete(Store store);
-    List<Store> findAll() ;
+
     void sell(Long id);
      List findByNumberOfParty(Long id);
     List findLapptopByDate(Date date);
