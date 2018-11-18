@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StudentsRestEndpoint implements StudentsEndpoint {
 
-
     public GeneralResponse<Long> createStudent(@RequestBody CreateStudentRequest request) {
         return null;
     }
