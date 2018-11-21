@@ -46,14 +46,29 @@ appealService.changeStatus(id,statusAppeal);
     }
 
     public GeneralResponse<List<AppealDTO>> getAll() {
+    appealService.getAll();
 
         return new GeneralResponse<List<AppealDTO>>("200",null);
 
     }
 
-    public GeneralResponse<List<AppealDTO>> getPage() {
-        return null;
+    public GeneralResponse<List<AppealDTO>> getPage(Integer page, Integer amount) {
+int x;
+        if (page!=1) {
+            x = amount * page;
+            amount++;
+        }
+        else x = page;
+
+        while (amount!=0){
+            appealService.getAll().add(appealService.get(Long.valueOf(x)));
+            x++;
+            amount--;
+        }
+        return new GeneralResponse<List<AppealDTO>>("200",null);
     }
+
+
 
 
 }

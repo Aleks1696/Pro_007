@@ -50,5 +50,5 @@ public interface AppealEndpoint {
     GeneralResponse<List<AppealDTO>> getAll ();
     @ApiOperation(value = " Получить все аккуальные  ")
     @RequestMapping(value = "/GetPage", method = RequestMethod.GET)
-    GeneralResponse<List<AppealDTO>> getPage ();
+    GeneralResponse<List<AppealDTO>> getPage (Integer page, Integer amount);
 }
