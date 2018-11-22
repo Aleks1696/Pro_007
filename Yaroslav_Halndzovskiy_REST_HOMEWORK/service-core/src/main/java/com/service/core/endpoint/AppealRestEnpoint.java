@@ -51,7 +51,7 @@ appealService.changeStatus(id,statusAppeal);
         return new GeneralResponse<List<AppealDTO>>("200",null);
 
     }
-
+// Cупер костыль.
     public GeneralResponse<List<AppealDTO>> getPage(Integer page, Integer amount) {
 int x;
         if (page!=1) {
