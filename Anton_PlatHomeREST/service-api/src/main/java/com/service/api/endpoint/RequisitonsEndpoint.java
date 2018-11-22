@@ -14,8 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
 
-import java.awt.*;
 
 @SwaggerDefinition(
         info = @Info(description = "REST API",version = "1.0.0",title = "REST API"),
@@ -56,7 +56,9 @@ public interface RequisitonsEndpoint {
 //    @RequestMapping(value = "/get", method = RequestMethod.GET)
 //    GeneralResponse<List<RequisitionDTO>> getPage ();
 
-
+    @ApiOperation(value = " Получить все аккуальные  ")
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    GeneralResponse<List<RequisitionDTO>> getAll ();
 
 
 }

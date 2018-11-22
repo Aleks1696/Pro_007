@@ -8,7 +8,6 @@ import com.service.api.request.UpdateRequisitionRequest;
 import com.service.api.responce.GeneralResponse;
 import com.service.core.service.RequisitionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,18 +16,11 @@ import java.util.List;
 
 @RestController
 public class RequisitionRestEndpoint implements RequisitonsEndpoint {
-
-
- private   RequisitionService requisitionService;
-
-
+    private   RequisitionService requisitionService;
     @Autowired
     public RequisitionRestEndpoint(RequisitionService requisitionService) {
         this.requisitionService = requisitionService;
     }
-
-
-
 
     public GeneralResponse<Long> createRequisition(@RequestBody CreateRequisitionRequest request) {
         return new GeneralResponse<Long>("200",requisitionService.create(request));
@@ -38,12 +30,12 @@ public class RequisitionRestEndpoint implements RequisitonsEndpoint {
 requisitionService.changeStatus(id,statusRequisitionRequest);
     }
 
-    public GeneralResponse<Void> updateRequisition(UpdateRequisitionRequest request) {
+    public GeneralResponse<Void> updateRequisition(@RequestBody UpdateRequisitionRequest request) {
         requisitionService.update(request);
         return new GeneralResponse<Void>("200", null);
     }
 
-    public GeneralResponse<Void> deleteRequisition(Long id) {
+    public GeneralResponse<Void> deleteRequisition(@RequestParam("id") Long id) {
         requisitionService.delete(id);
         return new GeneralResponse<Void>("200", null);
     }

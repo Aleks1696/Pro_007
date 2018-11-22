@@ -31,6 +31,7 @@ public class RequisitionServiceImpl implements RequisitionService {
         requisition.setComment(request.getComment());
         requisition.setCreationDate(Calendar.getInstance().getTime());
         requisition.setStatusRequisitionRequest(request.getStatus());
+        requisition.setPhone(request.getPhone());
         return requisitionRepository.saveAndFlush(requisition).getId();
     }
 
@@ -57,6 +58,7 @@ if(request == null){
         requisition.setComment(request.getComment());
         requisition.setCreationDate(Calendar.getInstance().getTime());
         requisition.setStatusRequisitionRequest(request.getStatus());
+        requisition.setPhone(request.getPhone());
         requisitionRepository.saveAndFlush(requisition);
     }
 

@@ -2,8 +2,6 @@ package com.service.core.domain;
 
 
 import com.service.api.request.StatusRequisitionRequest;
-
-
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -28,16 +26,20 @@ public class Requisition {
 
     @Column
     private StatusRequisitionRequest statusRequisitionRequest;
+    @Column
+    private String phone;
 
     public Requisition() {
     }
 
-    public Requisition(String name, Date creationDate, String email, String comment, StatusRequisitionRequest statusRequisitionRequest) {
+
+    public Requisition(String name, Date creationDate, String email, String comment, StatusRequisitionRequest statusRequisitionRequest, String phone) {
         this.name = name;
         this.creationDate = creationDate;
         this.email = email;
         this.comment = comment;
         this.statusRequisitionRequest = statusRequisitionRequest;
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -88,16 +90,12 @@ public class Requisition {
         this.statusRequisitionRequest = statusRequisitionRequest;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Requisition{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", creationDate=").append(creationDate);
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", comment='").append(comment).append('\'');
-        sb.append(", statusRequisitionRequest=").append(statusRequisitionRequest);
-        sb.append('}');
-        return sb.toString();
+    public String getPhone() {
+        return phone;
     }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
 }

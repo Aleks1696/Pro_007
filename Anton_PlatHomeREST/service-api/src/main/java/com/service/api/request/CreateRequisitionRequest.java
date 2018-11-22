@@ -6,6 +6,15 @@ public class CreateRequisitionRequest {
     private String email;
     private String comment;
     private StatusRequisitionRequest status;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getName() {
         return name;
@@ -55,6 +64,7 @@ public class CreateRequisitionRequest {
         sb.append(", email='").append(email).append('\'');
         sb.append(", comment='").append(comment).append('\'');
         sb.append(", status=").append(status);
+        sb.append(", phone='").append(phone).append('\'');
         sb.append('}');
         return sb.toString();
     }
