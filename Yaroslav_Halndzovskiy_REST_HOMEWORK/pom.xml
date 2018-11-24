@@ -8,6 +8,7 @@
   <groupId>Yaroslav_Halindzovskiy_REST_HOMEWORK</groupId>
     <artifactId>Yaroslav_Halindzovskiy_REST_HOMEWORK</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 <modules>
 <module>service-api</module>
 <module>service-core</module>

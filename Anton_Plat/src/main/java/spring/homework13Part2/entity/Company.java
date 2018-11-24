@@ -5,46 +5,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Company {
     @Autowired
-    private Director director;
-
+    @Qualifier("director")
+    private Employee director;
     @Autowired
-    private Manager manager;
-
+    @Qualifier("manager")
+    private Employee manager;
     @Autowired
-    private Driver driver;
+    @Qualifier("driver")
+    private Employee driver;
 
-    public Company() {
-        this.director = director;
-        this.manager = manager;
-        this.driver = driver;
-    }
 
-    public Director getDirector() {
-        return director;
-    }
-
-    public Company setDirector(Director director) {
-        this.director = director;
-        return this;
-    }
-
-    public Manager getManager() {
-        return manager;
-    }
-
-    public Company setManager(Manager manager) {
-        this.manager = manager;
-        return this;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public Company setDriver(Driver driver) {
-        this.driver = driver;
-        return this;
-    }
 
     @Override
     public String toString() {
