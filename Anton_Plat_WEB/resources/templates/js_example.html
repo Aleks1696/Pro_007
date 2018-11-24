@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>WEB-Title</title>
+
+    <script>
+        /* JavaScript - интерпритируемый язык, который выполняется
+        *               в браузере в момент работы веб приложения
+        *
+        *               Язык не является строготипизированным.*/
+
+        var variable; /* Обьявление переменной*/
+
+        value = 1;
+        value = 'Hello';
+        value = true;
+        value = "Test";
+
+        console.log('Значение переменной value: ', value);
+
+        object = new Object();
+        object.id = 10;
+        object.name = 'Имя';
+        object.surname = 'Фамилия';
+
+        console.log('Объект object: ', object);
+
+        var variable1 = 5.6;
+        var variable2 = 5.8;
+
+        /* document.writeln -  позволяет добавить текстовую информацию на HTML страницу
+        * <br/> - перенос строки на новую страницу */
+        document.writeln('Переменная 1: ', variable1, '<br/>', 'Переменная 2: ', variable2, '<br/>');
+        document.writeln('Сумма: ', variable1 + variable2, '<br/>');
+
+        var result = 5 + 2; //7
+        document.writeln('Значение result: ', result, '<br/>');
+        result = 5 - '3'; //2
+        document.writeln('Значение result: ', result, '<br/>');
+        result = '8' - '3'; //5
+        document.writeln('Значение result: ', result, '<br/>');
+        result = '7' + '3'; //73
+        document.writeln('Значение result: ', result, '<br/>');
+        result = 8 - 'Текст'; //NaN (Not a Number)
+        document.writeln('Значение result: ', result, '<br/>');
+        result = '8' - 'Текст'; //NaN
+        document.writeln('Значение result: ', result, '<br/>');
+
+        var array = new Array(1, true, 'Привет', 5.98);
+        document.writeln('Массив: ', array, '<br/>');
+        console.log(array);
+
+    </script>
+</head>
+<body/>
+</html>
