@@ -31,4 +31,9 @@ public class RouteController {
     public String jsFormsPage() {
         return "js_forms";
     }
+
+    @RequestMapping(value = "/employees.html", method = RequestMethod.GET)
+    public String employeesPage() {
+        return "employees";
+    }
 }
