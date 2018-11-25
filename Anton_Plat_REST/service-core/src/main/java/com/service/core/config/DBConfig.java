@@ -60,22 +60,22 @@ public class DBConfig {
 
     @Bean(name = "entityManagerFactory")
     @Primary
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(
-            DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
-
-        LocalContainerEntityManagerFactoryBean
-                entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setJpaDialect(new HibernateJpaDialect());
-        entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
-        entityManagerFactoryBean.setPackagesToScan(PACKAGES_TO_SCAN);
-
-        Properties properties = new Properties();
-        properties.put("hibernate.dialect", HIBERNATE_DIALECT);
-        properties.put("hibernate.show_sql", HIBERNATE_SHOW_SQL);
-        properties.put("hibernate.hbm2ddl.auto", HIBERNATE_HBM2DDL_AUTO);
-        entityManagerFactoryBean.setJpaProperties(properties);
-
-        return entityManagerFactoryBean;
-    }
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(
+//            DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
+//
+//        LocalContainerEntityManagerFactoryBean
+//                entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+//        entityManagerFactoryBean.setDataSource(dataSource);
+//        entityManagerFactoryBean.setJpaDialect(new HibernateJpaDialect());
+//        entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
+//        entityManagerFactoryBean.setPackagesToScan(PACKAGES_TO_SCAN);
+//
+//        Properties properties = new Properties();
+//        properties.put("hibernate.dialect", HIBERNATE_DIALECT);
+//        properties.put("hibernate.show_sql", HIBERNATE_SHOW_SQL);
+//        properties.put("hibernate.hbm2ddl.auto", HIBERNATE_HBM2DDL_AUTO);
+//        entityManagerFactoryBean.setJpaProperties(properties);
+//
+//        return entityManagerFactoryBean;
+//    }
 }

@@ -47,9 +47,9 @@ public interface RequisitonsEndpoint {
     @ApiOperation(value = "Получение заявления по Id")
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     GeneralResponse<RequisitionDTO> getRequisitionById(Long id);
-
+//
 //    @ApiOperation(value = "Получить все заявления")
-//    @RequestMapping(value = "/get", method = RequestMethod.GET)
+//    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
 //    GeneralResponse<List<RequisitionDTO>> getAll ();
 //
 //    @ApiOperation(value = "Получить все актуальное")

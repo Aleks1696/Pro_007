@@ -1,4 +1,4 @@
 package com.service.api.request;
 
-   public enum StatusRequisitionRequest{ In_progress,Confirmed,Canceled
+   public enum StatusRequisitionRequest{ IN_PROGRESS,CONFIRMED,CANCELD
 }

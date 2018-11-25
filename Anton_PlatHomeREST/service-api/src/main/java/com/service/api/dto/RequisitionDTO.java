@@ -13,7 +13,7 @@ public class RequisitionDTO {
     private String email;
     private Long id;
     private String name;
-    private String phone;
+
     private StatusRequisitionRequest status;
 
     public String getComment() {
@@ -56,13 +56,6 @@ public class RequisitionDTO {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public StatusRequisitionRequest getStatus() {
         return status;
@@ -80,7 +73,6 @@ public class RequisitionDTO {
         sb.append(", email='").append(email).append('\'');
         sb.append(", id=").append(id);
         sb.append(", name='").append(name).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
         sb.append(", status=").append(status);
         sb.append('}');
         return sb.toString();
