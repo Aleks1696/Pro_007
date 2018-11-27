@@ -1,4 +1,4 @@
-package web.controller;
+package com.web.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -37,5 +37,10 @@ public class RouteController {
     @RequestMapping(value = "/calculater.html",method = RequestMethod.GET)
     public String calculator(){
         return "calculater";
+    }
+
+    @RequestMapping(value = "/employees.html",method = RequestMethod.GET)
+    public String employeesPages(){
+        return "employees";
     }
 }
