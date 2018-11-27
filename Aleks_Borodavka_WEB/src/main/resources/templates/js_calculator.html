@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale-1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Calculator</title>
+
+        <script>
+             function addition() {
+                  var firstOperand = document.getElementById('1st operand');
+                  var secondOperand = document.getElementById('2nd operand');
+                 alert('Result: ' + (+firstOperand.value + +secondOperand.value));
+             }
+            function subtract() {
+                var firstOperand = document.getElementById('1st operand');
+                var secondOperand = document.getElementById('2nd operand');
+                alert('Result: ' + (+firstOperand.value - +secondOperand.value));
+            }
+            function division() {
+                var firstOperand = document.getElementById('1st operand');
+                var secondOperand = document.getElementById('2nd operand');
+                alert('Result: ' + (+firstOperand.value / +secondOperand.value));
+            }
+            function multiply() {
+                var firstOperand = document.getElementById('1st operand');
+                var secondOperand = document.getElementById('2nd operand');
+                alert('Result: ' + (+firstOperand.value * +secondOperand.value));
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <fieldset>
+            <legend>Calculator</legend>
+
+            <p>Enter first operand</p>
+            <input id="1st operand" type="number"/>
+            <p>Enter second operand</p>
+            <input id="2nd operand" type="number"/>
+
+            <form onsubmit="return addition()">
+                <input type="submit" value="+"/>
+            </form>
+
+            <form onsubmit="return subtract()">
+                <input type="submit" value="-"/>
+            </form>
+
+            <form onsubmit="return division()">
+                <input type="submit" value="/"/>
+            </form>
+
+            <form onsubmit="return multiply()">
+                <input type="submit" value="*"/>
+            </form>
+
+
+        </fieldset>
+
+
+    </body>
+</html>
