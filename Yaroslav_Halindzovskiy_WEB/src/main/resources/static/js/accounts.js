@@ -16,12 +16,6 @@ function  createAccount() {
         }
     })
 }
-    function  showKu() {
-
-        alert('Ku')
-
-    }
-
 
 
 
