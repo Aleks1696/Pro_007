@@ -27,4 +27,12 @@ public class RouteController {
     public String jsFormsPage() {
         return "js-forms";
     }
+    @RequestMapping(value = "/calc.html", method = RequestMethod.GET)
+    public String calcPage() {
+        return "calc";
+    }
+    @RequestMapping(value = "/employees.html", method = RequestMethod.GET)
+    public String employeesPage() {
+        return "employees";
+    }
 }

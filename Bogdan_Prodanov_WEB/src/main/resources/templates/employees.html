@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>JOpery</title>
+    <script type="text/javascript" src="/lib/q.js"></script>
+    <script type="text/javascript" src="/js/employees.js"></script>
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>Создание нового сотрудника: </legend>
+        <p>Имя:</p>
+        <input id="name" type="text"/>
+        <p>Должность:</p>
+        <input id="position" type="text"/>
+        <p>Зарплата:</p>
+        <input id="salary" type="number"/>
+        <hr/>
+        <input type="button" value="Добавить" onclick="createEmployee()"/>
+
+    </fieldset>
+</div>
+<div>
+    <fieldset>
+        <legend>Список добавленых сотрудников</legend>
+        <input type="button" value="Обновить" onclick="getAllEmployees() "/>
+        <div id="workspace"></div>
+    </fieldset>
+</div>
+</body>
+</html>
