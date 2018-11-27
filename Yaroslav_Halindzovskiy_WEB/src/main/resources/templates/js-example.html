@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>jopa-2</title>
+    <script>
+        /* JavaScript - интерпретируемый язык, который выполняется
+        *               в браузере в момент работы веб приложения
+        *
+        *               Язык не является строготипизированным.*/
+
+        var variable;
+        value = 1;
+        value = 'Hello';
+        value = true;
+        value = 'Test';
+
+        console.log('Значение переменной value', value);
+        object = new Object();
+        object.id = 10;
+        object.name = 'Имя';
+        object.surname = 'Фамилия';
+
+        console.log('Обьект object: ', object);
+
+        var variable1 = 5.6;
+        var variable2 = 5.8;
+
+        /* document.writeln - позволяет добавить текстовую инфу на стр*/
+        document.writeln('Переменная 1: ', variable1, '<br/>', 'Переменная 2: ', variable2, '<br/>');
+        document.writeln('Сумма: ', variable1 + variable2, '<br/>');
+        var result = 5 - 3;
+        document.writeln('Значение result:', result,'<br/>')
+        result = '8'- '3';
+        document.writeln('Значение result:', result,'<br/>')
+         result = '7' + '3';
+        document.writeln('Значение result:', result,'<br/>')
+        result = '8'- 'Текст';
+        document.writeln('Значение result:', result,'<br/>')
+
+        var array = new Array(1, true, 'Привет', 5.98);
+        document.writeln('Массив: ', array, '<br/>');
+        console.log(array);
+    </script>
+</head>
+<body/>
+</html>
