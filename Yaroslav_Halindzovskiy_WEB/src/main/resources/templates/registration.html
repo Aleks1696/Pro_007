@@ -5,8 +5,29 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
      <title>Регистрация</title>
+      <script type="text/javascript" src="/js/accounts.js"></script>
      <script type="text/javascript" src="/lib/q.js"></script>
-     <script type="text/javascript" src="/js/accounts.js"></script>
+<script>
+function  createAccount() {
+    jQuery.ajax({
+
+        type: 'POST',
+        url: '/account/create',
+        data: {
+            login: jQuery('#login').val(),
+            password: jQuery('#password').val(),
+
+        },
+        success: function () {
+            jQuery('#login').val('');
+            jQuery('#password').val('');
+            jQuery('#passwordD').val('');
+
+        }
+    })
+}
+
+</script>
 
 
 </head>
