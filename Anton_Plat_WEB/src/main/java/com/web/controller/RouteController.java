@@ -43,4 +43,22 @@ public class RouteController {
     public String employeesPages(){
         return "employees";
     }
+
+    @RequestMapping(value = "/registration.html",method = RequestMethod.GET)
+    public String registrationPage(){
+        return "registration";
+    }
+
+
+    @RequestMapping(value = "/authorizationPage.html",method = RequestMethod.GET)
+    public String authorizationPage(){
+        return "authorization";
+    }
+
+
+
+    @RequestMapping(value = "/members.html",method = RequestMethod.GET)
+    public String membersPage(){
+        return "members";
+    }
 }
