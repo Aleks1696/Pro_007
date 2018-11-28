@@ -63,8 +63,8 @@ function getAllMembers(){
             var result = jQuery.parseJSON(response);
 
             jQuery('#workspace')
-                .empty
-                .append('<table id="members>');
+                .empty()
+                .append('<table id="members">');
             jQuery('#members')
                 .append('<caption>Members</caption>')
                 .append('<thead><tr id="header"></tr></thead>')
