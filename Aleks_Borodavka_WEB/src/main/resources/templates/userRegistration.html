@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width initial-scale-1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Registration form</title>
+
+        <script src ="/lib/jquery-3.3.1.min.js"></script>
+
+        <script src="/js/users.js" ></script>
+
+    </head>
+
+    <body>
+
+        <div>
+            <fieldset>
+                <legend>Registration</legend>
+                    <p>Login: </p>
+                    <input id="login" type="text"/>
+                    <p>E-mail: </p>
+                    <input id="e_mail" type="text"/>
+                    <p>Password: </p>
+                    <input id="password" type="text"/>
+                    <p>Confirm password: </p>
+                    <input id="confirm_password" type="text"/>
+
+                    <input id="register" type="button" value="Sing up" onclick="signUP()"/>
+
+                <div id="registration_status">
+
+                </div>
+            </fieldset>
+
+        </div>
+
+
+    </body>
+
+</html>
