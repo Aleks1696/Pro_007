@@ -42,9 +42,30 @@ public class AccountController {
             item.put("login", account.getLogin());
             body.add(item);
         }
-            return body.toJSONString();
+        return body.toJSONString();
 
 
     }
+
+    @RequestMapping(value = "/account/get/all", method = RequestMethod.GET)
+
+    public String login(@RequestParam(name = "login") String login,
+                        @RequestParam(name = "password") String password) {
+
+        List<Account> accounts = accountRepository.findAll();
+        JSONObject body = new JSONObject();
+        for (Account account : accounts) {
+            if (login.equals(account.getLogin()) && password.equals(account.getPassword())) {
+                body.put("result", true).toString();
+                return body.toJSONString();
+
+            }
+
+        }
+        body.put("result", false).toString();
+        return body.toJSONString();
+    }
+
 }
+
 

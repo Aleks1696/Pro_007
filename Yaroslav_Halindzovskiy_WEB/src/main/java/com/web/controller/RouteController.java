@@ -43,5 +43,7 @@ public class RouteController {
         return "registration";
     }
 
+    @RequestMapping(value = "/login.html", method = RequestMethod.GET)
+    public String login () {return "login";}
 
 }

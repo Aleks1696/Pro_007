@@ -9,7 +9,7 @@ function createEmployee() {
             position: jQuery('#position').val(),
             salary: jQuery('#salary').val()
         },
-        success: function () {
+        success: function() {
             jQuery('#name').val('');
             jQuery('#position').val('');
             jQuery('#salary').val('');
@@ -21,8 +21,9 @@ function getAllEmployees() {
     jQuery.ajax({
         type: 'GET',
         url: '/employee/get/all',
-        success: function (response) {
+        success: function(response) {
             var result = jQuery.parseJSON(response);
+
             jQuery('#workspace')
                 .empty()
                 .append('<table id="employees">');
@@ -36,17 +37,15 @@ function getAllEmployees() {
                 .append('<th>Должность</th>')
                 .append('<th>Зарплата</th>');
 
-
-            for (var i = 0; i < result.length; i++){
-                jQuery('#body').append('<tr id="cur_row' + i + '" class="item"></tr>')
-                jQuery('#cur_cow' + i)
+            for (var i = 0; i < result.length; i++) {
+                jQuery('#body')
+                    .append('<tr id="cur_row' + i + '"></tr>')
+                jQuery('#cur_row' + i)
                     .append('<td id="employee_id">' + result[i].id + '</td>')
                     .append('<td id="employee_name">' + result[i].name + '</td>')
                     .append('<td id="employee_position">' + result[i].position + '</td>')
-                    .append('<td id="employee_salary">' + result[i].salary + '</td>') ;
+                    .append('<td id="employee_salary">' + result[i].salary + '</td>')
             }
-
         }
     })
-
 }
