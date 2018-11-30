@@ -32,22 +32,25 @@ function signUP() {
             e_mail: jQuery('#e_mail').val()
         },
         success: function (response) {
-            if (response == 2) {
-                jQuery('#login').val('');
-                jQuery('#password').val('');
-                jQuery('#e_mail').val('');
-                jQuery('#confirm_password').val('');
+            switch (response) {
+                case 0:
+                    jQuery('#registration_status')
+                        .empty()
+                        .append('<h4>This login is already taken</h4>');
+                    break;
+                case 1:
+                    jQuery('#registration_status')
+                        .empty()
+                        .append('<h4>Passwords does not match</h4>');
+                    break;
+                case 2:
+                    jQuery('#login').val('');
+                    jQuery('#password').val('');
+                    jQuery('#e_mail').val('');
+                    jQuery('#confirm_password').val('');
 
-                window.location.href = "/userPage.html";
-
-            } else if (response == 0) {
-                jQuery('#registration_status')
-                    .empty()
-                    .append('<h4>This login is already taken</h4>');
-            } else if (response == 1) {
-                jQuery('#registration_status')
-                    .empty()
-                    .append('<h4>Passwords does not match</h4>');
+                    window.location.href = "/userPage.html";
+                    break;
             }
         }
     })
@@ -96,6 +99,7 @@ function forgotThePassword() {
         },
         success: function (response) {
             window.alert('Here is your password: ' + response)
+
         }
     })
 }
