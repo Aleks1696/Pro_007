@@ -115,6 +115,14 @@
             <artifactId>spring-orm</artifactId>
             <version>5.0.10.RELEASE</version>
         </dependency>
+
+        <!-- JUnit Framework -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 
