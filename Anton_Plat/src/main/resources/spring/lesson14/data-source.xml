@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Настройки соединения с БД (для указания драйвера, логина и пароля пользователя)
+     -->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring?useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+
+    </bean>
+
+    <!-- Настройки для создания фобрики сессий SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop>
+            </props>
+
+        </property>
+
+        <!-- Добавление пакета, в котором будут находится Entity-->
+        <property name="packagesToScan">
+            <list>
+                <value>spring.lesson14.entity</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Менеджер транзакций - основное назначение менеджера - автоматизировать процес создания
+    сессии и транзакции
+    1. Создается сессия
+    2. Открытие транзакции
+    3. Выполняется пользовательский код
+    4. Фиксация изменений и закрытие сессии -->
+
+    <bean name="txmManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- Подключение менеджера транзакций к Spring ORM -->
+    <tx:annotation-driven transaction-manager="txmManager"/>
+
+</beans>

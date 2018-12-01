@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Calculator</title>
+
+  <script>
+
+
+                   function plus() {
+                        var   first = document.getElementById('first');
+                       var second = document.getElementById('second')
+                  var resutl = +first.value + +second.value
+                  alert("Сумма равна " + resutl)}
+
+                    function minus() {
+                       var   first = document.getElementById('first');
+                       var second = document.getElementById('second')
+                   var resutl = first.value - second.value
+                  alert(resutl)}
+                    function split() {
+                   var resutl = first.value / second.value
+                  alert(resutl)}
+
+                   function myltiply() {
+                   var resutl = first.value * second.value
+                  alert(resutl)
+                  }
+
+
+
+          </script>
+</head>
+<body>
+<fieldset>
+<legend> Calculator</legend>
+<form>
+
+
+</form>
+<form >
+
+<p>Первый</p>
+ <input id="first" type="number"/>
+ <p> Второй </p>
+ <input id="second" type="number"/>
+ <input type="button" value="+" onclick="plus()"/>
+ <input type="button" value="-" onclick="minus()"/>
+ <input type="button" value="/" onclick="split()"/>
+ <input type="button" value="*" onclick="myltiply()"/>
+
+
+</form>
+
+</fieldset>
+</body>
+</html>

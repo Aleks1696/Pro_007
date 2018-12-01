@@ -19,9 +19,7 @@ public class BasedEmployee implements Employee {
         return surname;
     }
 
-    public Double getSalary() {
-        return salary;
-    }
+
 
     @Override
     public String toString() {
