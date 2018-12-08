@@ -4,18 +4,17 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <title>Клиент</title>
+        <title>Учетная запись</title>
     </head>
     <body>
         <fieldset>
-            <legend>Customer</legend>
+            <legend>Создание пользователя</legend>
             <form id="customer"
-                  th:action="@{/customer}"
+                  th:action="@{/user}"
                   th:object="${customerModel}"
                   method="post">
-                <p><input placeholder="Введите имя" type="text" th:field="*{name}"/></p>
-                <p><input placeholder="Введите фамилию" type="text" th:field="*{surname}"/></p>
-                <p><input placeholder="Введите возраст" type="number" th:field="*{age}"/></p>
+                <p><input placeholder="Введите логин" type="text" th:field="*{login}"/></p>
+                <p><input placeholder="Введите пароль" type="text" th:field="*{password}"/></p>
                 <input type="submit" value="Добавить"/>
             </form>
         </fieldset>
