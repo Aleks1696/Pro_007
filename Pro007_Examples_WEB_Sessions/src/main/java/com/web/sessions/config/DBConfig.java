@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.web.dao")
+@EnableJpaRepositories("com.web.sessions.dao")
 public class DBConfig {
 
     @Value("${db.driver}")
