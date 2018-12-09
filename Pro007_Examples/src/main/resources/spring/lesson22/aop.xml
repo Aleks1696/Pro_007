@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="carXmlAspect"
+          class="spring.lesson22.aspects.CarXMLAspect"/>
+
+    <aop:config>
+        <aop:aspect
+                id="carAspect"
+                ref="carXmlAspect">
+            <!-- pointcut - позволяет создать точку входа для выполнения аспекта-->
+            <aop:pointcut
+                    id="createCarMethod"
+                    expression="execution(* spring.lesson22.dao.CarDAOImpl.create(..))"/>
+
+            <!-- подключение действий к методу-->
+            <aop:before pointcut-ref="createCarMethod" method="beforeCreate"/>
+            <aop:after pointcut-ref="createCarMethod" method="afterCreate"/>
+            <aop:after-returning pointcut-ref="createCarMethod" method="afterReturningCreate"/>
+            <aop:after-throwing pointcut-ref="createCarMethod" method="afterThrowingCreate"/>
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>
