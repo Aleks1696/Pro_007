@@ -26,12 +26,16 @@ public class CarDAOImpl implements CarDAO {
 
     @Override
     public Car read(Long id) {
-        return null;
+        return sessionFactory
+                .getCurrentSession()
+                .get(Car.class, id);
     }
 
     @Override
     public void update(Car car) {
-
+        sessionFactory
+                .getCurrentSession()
+                .update(car);
     }
 
     @Override

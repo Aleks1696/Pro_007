@@ -16,6 +16,12 @@ public class AspectsApp {
 
         Car car = new Car("Kia", "Black", 2010);
 
-        carDAO.create(car);
+        Long id = carDAO.create(car);
+
+        Car result = carDAO.read(id);
+
+        result.setColor("WHITE");
+
+        carDAO.update(result);
     }
 }
