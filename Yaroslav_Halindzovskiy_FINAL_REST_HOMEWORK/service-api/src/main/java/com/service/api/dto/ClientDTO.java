@@ -1,6 +1,7 @@
 package com.service.api.dto;
 
-import web.domain.Account;
+
+import com.domain.Account;
 
 public class ClientDTO {
 

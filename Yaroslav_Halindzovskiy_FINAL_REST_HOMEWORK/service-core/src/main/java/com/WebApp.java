@@ -1,4 +1,4 @@
-package web;
+package com;
 
 public class WebApp {
 }

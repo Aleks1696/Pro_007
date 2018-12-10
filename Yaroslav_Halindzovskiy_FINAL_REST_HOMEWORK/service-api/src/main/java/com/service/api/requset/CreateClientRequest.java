@@ -1,6 +1,6 @@
 package com.service.api.requset;
 
-import web.domain.Account;
+import com.domain.Account;
 
 public class CreateClientRequest {
     private Account account;
