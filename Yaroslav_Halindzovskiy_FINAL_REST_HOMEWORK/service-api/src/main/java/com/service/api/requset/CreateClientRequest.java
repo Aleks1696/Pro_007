@@ -1,18 +1,16 @@
 package com.service.api.requset;
 
-import com.domain.Account;
-
 public class CreateClientRequest {
-    private Account account;
+    private String account;
     private String email;
     private String name;
     private String surname;
     private String phone;
 
-    public Account getAccount() {
+    public String getAccount() {
         return account;
     }
-    public void setAccount(Account account) {
+    public void setAccount(String account) {
         this.account = account;
     }
     public String getEmail() {

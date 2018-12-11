@@ -1,13 +1,11 @@
 package com.service.api.dto;
 
 
-import com.domain.Account;
-
 public class ClientDTO {
 
 
     private Long id;
-    private Account account;
+    private String account;
     private String email;
     private String name;
     private String surname;
@@ -15,11 +13,11 @@ public class ClientDTO {
 
 
 
-    public Account getAccount() {
+    public String getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(String account) {
         this.account = account;
     }
 

@@ -7,8 +7,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.service.core.homework</groupId>
-    <artifactId>service-core-homework</artifactId>
+    <groupId>com.service.core</groupId>
+    <artifactId>service-core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
