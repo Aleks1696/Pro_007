@@ -1,4 +1,4 @@
-package com.endpoint;
+package com.service.core.endpoint;
 
 import com.service.api.dto.ClientDTO;
 import com.service.api.dto.CourseDTO;

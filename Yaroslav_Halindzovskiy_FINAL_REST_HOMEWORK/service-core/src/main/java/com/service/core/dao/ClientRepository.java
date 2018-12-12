@@ -1,6 +1,6 @@
-package com.dao;
+package com.service.core.dao;
 
-import com.domain.Client;
+import com.service.core.domain.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClientRepository extends JpaRepository<Client,Long> {

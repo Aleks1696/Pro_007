@@ -1,4 +1,4 @@
-package com.domain;
+package com.service.core.domain;
 import javax.persistence.*;
 
 @Entity
