@@ -1,7 +1,7 @@
-package web.dao;
+package com.service.core.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.domain.Account;
+import com.service.core.domain.Account;
 
 public interface AccountRepository extends JpaRepository<Account,Long> {
 }

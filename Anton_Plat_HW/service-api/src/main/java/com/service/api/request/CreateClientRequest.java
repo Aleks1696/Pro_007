@@ -1,17 +1,11 @@
-package com.service.api.dto;
+package com.service.api.request;
 
-
-public class ClientDTO {
-
-
-    private Long id;
+public class CreateClientRequest {
     private String account;
     private String email;
     private String name;
     private String surname;
     private String phone;
-
-
 
     public String getAccount() {
         return account;
@@ -19,14 +13,6 @@ public class ClientDTO {
 
     public void setAccount(String account) {
         this.account = account;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -61,12 +47,10 @@ public class ClientDTO {
         this.phone = phone;
     }
 
-
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ClientDTO{");
-        sb.append("id=").append(id);
-        sb.append(", account=").append(account);
+        final StringBuilder sb = new StringBuilder("CreateClientRequest{");
+        sb.append("account='").append(account).append('\'');
         sb.append(", email='").append(email).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", surname='").append(surname).append('\'');
@@ -75,5 +59,3 @@ public class ClientDTO {
         return sb.toString();
     }
 }
-
-
